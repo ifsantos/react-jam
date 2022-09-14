@@ -13,10 +13,10 @@ export const createTutorial = (title: string, description: string) => async (dis
         const res = await TutorialService.create({title, description})
         dispatch({
             type: CREATE_TUTORIAL,
-            payload: res.data,
+            payload: res.data
         });
 
-        return Promise.resolve()
+        return Promise.resolve(res.data)
     } catch (error) {
         return Promise.reject(error)
     }
